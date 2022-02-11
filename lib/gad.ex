@@ -17,7 +17,9 @@ defmodule GAD do
     :world
   end
 
-  @spec sum(number(), number()) :: number()
+  @spec sum(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.sum(1,2)
@@ -37,7 +39,9 @@ defmodule GAD do
     end
   end
 
-  @spec subtract(number(), number()) :: number()
+  @spec subtract(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.subtract(5,2)
@@ -57,7 +61,9 @@ defmodule GAD do
     end
   end
 
-  @spec devide(number(), number()) :: number()
+  @spec devide(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.devide(10,2)
@@ -77,7 +83,9 @@ defmodule GAD do
     end
   end
 
-  @spec multiply(number(), number()) :: number()
+  @spec multiply(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.multiply(5,2)
