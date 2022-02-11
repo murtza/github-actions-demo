@@ -3,6 +3,7 @@ defmodule GAD do
   Documentation for `GAD`.
   """
 
+  @err_msg "Please use numbers"
   @doc """
   Hello world.
 
@@ -28,13 +29,11 @@ defmodule GAD do
   """
   def sum(n1, n2)
 
-  def sum(n1, n2) when not is_number(n1) or not is_number(n2) do
-    "Please use numbers"
-  end
+  def sum(n1, n2) when not is_number(n1) or not is_number(n2), do:
+    @err_msg
 
-  def sum(n1, n2) when is_number(n1) and is_number(n2) do
+  def sum(n1, n2) when is_number(n1) and is_number(n2), do:
     n1 + n2
-  end
 
   @spec subtract(number(), number()) :: number()
   @doc """
@@ -48,13 +47,11 @@ defmodule GAD do
   """
   def subtract(n1, n2)
 
-  def subtract(n1, n2) when not is_number(n1) or not is_number(n2) do
-    "Please use numbers"
-  end
+  def subtract(n1, n2) when not is_number(n1) or not is_number(n2), do:
+    @err_msg
 
-  def subtract(n1, n2) when is_number(n1) and is_number(n2) do
+  def subtract(n1, n2) when is_number(n1) and is_number(n2), do:
     n1 - n2
-  end
 
   @spec devide(number(), number()) :: number()
   @doc """
@@ -68,13 +65,11 @@ defmodule GAD do
   """
   def devide(n1, n2)
 
-  def devide(n1, n2) when not is_number(n1) or not is_number(n2) do
-    "Please use numbers"
-  end
+  def devide(n1, n2) when not is_number(n1) or not is_number(n2), do:
+    @err_msg
 
-  def devide(n1, n2) when is_number(n1) and is_number(n2) do
+  def devide(n1, n2) when is_number(n1) and is_number(n2), do:
     n1 / n2
-  end
 
   @spec multiply(number(), number()) :: number()
   @doc """
@@ -88,11 +83,10 @@ defmodule GAD do
   """
   def multiply(n1, n2)
 
-  def multiply(n1, n2) when not is_number(n1) or not is_number(n2) do
-    "Please use numbers"
-  end
+  def multiply(n1, n2) when not is_number(n1) or not is_number(n2), do:
+    @err_msg
 
-  def multiply(n1, n2) when is_number(n1) and is_number(n2) do
+  def multiply(n1, n2) when is_number(n1) and is_number(n2), do:
     n1 * n2
-  end
+
 end
