@@ -56,6 +56,26 @@ defmodule GAD do
     n1 - n2
   end
 
+  @spec devide(number(), number()) :: number()
+  @doc """
+
+    iex> GAD.devide(10,2)
+    iex> 5.0
+
+    iex> GAD.devide(10,"")
+    iex> "Please use numbers"
+
+  """
+  def devide(n1, n2)
+
+  def devide(n1, n2) when not is_number(n1) or not is_number(n2) do
+    "Please use numbers"
+  end
+
+  def devide(n1, n2) when is_number(n1) and is_number(n2) do
+    n1 / n2
+  end
+
   @spec multiply(number(), number()) :: number()
   @doc """
 
@@ -75,5 +95,4 @@ defmodule GAD do
   def multiply(n1, n2) when is_number(n1) and is_number(n2) do
     n1 * n2
   end
-
 end
