@@ -23,10 +23,10 @@ defmodule GAD do
   @doc """
 
     iex> GAD.sum(1,2)
-    iex> {:ok, 3}
+    {:ok, 3}
 
     iex> GAD.sum(1,"")
-    iex> {:error, "Please use numbers"}
+    {:error, "Please use numbers"}
 
   """
   def sum(n1, n2) do
@@ -45,10 +45,10 @@ defmodule GAD do
   @doc """
 
     iex> GAD.subtract(5,2)
-    iex> {:ok, 3}
+    {:ok, 3}
 
     iex> GAD.subtract(1,"")
-    iex> {:error, "Please use numbers"}
+    {:error, "Please use numbers"}
 
   """
   def subtract(n1, n2) do
@@ -67,10 +67,10 @@ defmodule GAD do
   @doc """
 
     iex> GAD.devide(10,2)
-    iex> {:ok, 5.0}
+    {:ok, 5.0}
 
     iex> GAD.devide(10,"")
-    iex> {:error, "Please use numbers"}
+    {:error, "Please use numbers"}
 
   """
   def devide(n1, n2) do
@@ -89,10 +89,10 @@ defmodule GAD do
   @doc """
 
     iex> GAD.multiply(5,2)
-    iex> {:ok, 10}
+    {:ok, 10}
 
     iex> GAD.multiply(1,"")
-    iex> {:error, "Please use numbers"}
+    {:error, "Please use numbers"}
 
   """
   def multiply(n1, n2) do
