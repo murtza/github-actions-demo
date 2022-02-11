@@ -21,5 +21,4 @@ defmodule GADTest do
   test "test devide funcion" do
     assert GAD.devide(10, 2) == 5.0
   end
-
 end
