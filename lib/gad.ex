@@ -17,67 +17,100 @@ defmodule GAD do
     :world
   end
 
-  @spec sum(number(), number()) :: number()
+  @spec sum(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.sum(1,2)
-    iex> 3
+    {:ok, 3}
 
     iex> GAD.sum(1,"")
-    iex> "Please use numbers"
+    {:error, "Please use numbers"}
 
   """
-  def sum(n1, n2)
+  def sum(n1, n2) do
+    with {:ok, n1} <- validate(n1),
+         {:ok, n2} <- validate(n2) do
+      {:ok, n1 + n2}
+    else
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
-  def sum(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
-
-  def sum(n1, n2) when is_number(n1) and is_number(n2), do: n1 + n2
-
-  @spec subtract(number(), number()) :: number()
+  @spec subtract(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.subtract(5,2)
-    iex> 3
+    {:ok, 3}
 
     iex> GAD.subtract(1,"")
-    iex> "Please use numbers"
+    {:error, "Please use numbers"}
 
   """
-  def subtract(n1, n2)
+  def subtract(n1, n2) do
+    with {:ok, n1} <- validate(n1),
+         {:ok, n2} <- validate(n2) do
+      {:ok, n1 - n2}
+    else
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
-  def subtract(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
-
-  def subtract(n1, n2) when is_number(n1) and is_number(n2), do: n1 - n2
-
-  @spec devide(number(), number()) :: number()
+  @spec devide(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.devide(10,2)
-    iex> 5.0
+    {:ok, 5.0}
 
     iex> GAD.devide(10,"")
-    iex> "Please use numbers"
+    {:error, "Please use numbers"}
 
   """
-  def devide(n1, n2)
+  def devide(n1, n2) do
+    with {:ok, n1} <- validate(n1),
+         {:ok, n2} <- validate(n2) do
+      {:ok, n1 / n2}
+    else
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
-  def devide(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
-
-  def devide(n1, n2) when is_number(n1) and is_number(n2), do: n1 / n2
-
-  @spec multiply(number(), number()) :: number()
+  @spec multiply(number(), number()) ::
+          {:ok, number()}
+          | {:error, binary()}
   @doc """
 
     iex> GAD.multiply(5,2)
-    iex> 10
+    {:ok, 10}
 
     iex> GAD.multiply(1,"")
-    iex> "Please use numbers"
+    {:error, "Please use numbers"}
 
   """
-  def multiply(n1, n2)
+  def multiply(n1, n2) do
+    with {:ok, n1} <- validate(n1),
+         {:ok, n2} <- validate(n2) do
+      {:ok, n1 * n2}
+    else
+      {:error, error} ->
+        {:error, error}
+    end
+  end
 
-  def multiply(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
-
-  def multiply(n1, n2) when is_number(n1) and is_number(n2), do: n1 * n2
+  # Private Functions
+  defp validate(n) do
+    if is_number(n) do
+      {:ok, n}
+    else
+      {:error, @err_msg}
+    end
+  end
 end
