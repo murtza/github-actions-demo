@@ -29,11 +29,9 @@ defmodule GAD do
   """
   def sum(n1, n2)
 
-  def sum(n1, n2) when not is_number(n1) or not is_number(n2), do:
-    @err_msg
+  def sum(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
 
-  def sum(n1, n2) when is_number(n1) and is_number(n2), do:
-    n1 + n2
+  def sum(n1, n2) when is_number(n1) and is_number(n2), do: n1 + n2
 
   @spec subtract(number(), number()) :: number()
   @doc """
@@ -47,11 +45,9 @@ defmodule GAD do
   """
   def subtract(n1, n2)
 
-  def subtract(n1, n2) when not is_number(n1) or not is_number(n2), do:
-    @err_msg
+  def subtract(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
 
-  def subtract(n1, n2) when is_number(n1) and is_number(n2), do:
-    n1 - n2
+  def subtract(n1, n2) when is_number(n1) and is_number(n2), do: n1 - n2
 
   @spec devide(number(), number()) :: number()
   @doc """
@@ -65,11 +61,9 @@ defmodule GAD do
   """
   def devide(n1, n2)
 
-  def devide(n1, n2) when not is_number(n1) or not is_number(n2), do:
-    @err_msg
+  def devide(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
 
-  def devide(n1, n2) when is_number(n1) and is_number(n2), do:
-    n1 / n2
+  def devide(n1, n2) when is_number(n1) and is_number(n2), do: n1 / n2
 
   @spec multiply(number(), number()) :: number()
   @doc """
@@ -83,10 +77,7 @@ defmodule GAD do
   """
   def multiply(n1, n2)
 
-  def multiply(n1, n2) when not is_number(n1) or not is_number(n2), do:
-    @err_msg
+  def multiply(n1, n2) when not is_number(n1) or not is_number(n2), do: @err_msg
 
-  def multiply(n1, n2) when is_number(n1) and is_number(n2), do:
-    n1 * n2
-
+  def multiply(n1, n2) when is_number(n1) and is_number(n2), do: n1 * n2
 end
