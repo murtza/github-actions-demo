@@ -27,6 +27,10 @@ defmodule GADTest do
     assert GAD.subtract(5, "2") == {:error, "Please use numbers"}
   end
 
+  test "test subtract funcion failure min" do
+    assert GAD.subtract(5, 0) == {:error, "Number must be greater than 0"}
+  end
+
   test "test multiply funcion" do
     assert GAD.multiply(5, 2) == {:ok, 10}
   end
