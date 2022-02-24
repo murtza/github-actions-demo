@@ -29,7 +29,9 @@ jobs:
       run: mix deps.get
     - name: Run tests
       run: mix test
+    - name: Check Staging
       if: ${{ github.ref_name == 'staging' }}
       run: echo "Yay! branch name is staging"
+    - name: Check Main
       if: ${{ github.ref_name == 'main' }}
       run: echo "Yay! branch name is main"
