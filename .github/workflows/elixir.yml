@@ -31,8 +31,6 @@ jobs:
       env: 
         LIST_DIR: "ls -la"
       run: |
-        echo "$LIST_DIR"
-        eval "$LIST_DIR"
         $LIST_DIR
         mix test
         
