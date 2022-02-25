@@ -28,7 +28,14 @@ jobs:
     - name: Install dependencies
       run: mix deps.get
     - name: Run tests
-      run: mix test
+      env: 
+        LIST_DIR: "ls -la"
+      run: |
+        echo "$LIST_DIR"
+        eval "$LIST_DIR"
+        $LIST_DIR
+        mix test
+        
     - name: Check Staging
       if: ${{ github.ref_name == 'staging' }}
       run: echo "Yay! branch name is staging"
